@@ -1,0 +1,111 @@
+/* common css style */
+:root {
+  box-sizing: border-box;
+}
+
+*,
+::before,
+::after {
+  box-sizing: inherit;
+  text-align: center;
+  margin: 0;
+}
+
+/* style for headings */
+h1 {
+  padding: 30px;
+  font-family: "Train One", "Roboto";
+  font-size: 3em;
+  font-weight: 400;
+  color: whitesmoke;
+}
+
+h2 {
+  padding: 20px;
+  font-family: "Roboto", Arial, Helvetica;
+  font-size: 1.5em;
+  font-weight: 100;
+}
+
+/* search button and input style */
+input,
+button {
+  height: 30px;
+}
+
+button {
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* body, header, main, footer */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header {
+  background-color: rgb(4, 7, 24);
+  padding: 50px;
+}
+
+main {
+  background-color: rgb(218, 218, 218);
+  padding: 10px 0;
+  flex: 1;
+}
+
+footer {
+  background-color: rgb(4, 7, 24);
+  font-family: "Roboto", Arial, Helvetica;
+  color: whitesmoke;
+  padding: 20px 0;
+}
+
+/* image container styles */
+#image-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  padding: 0 10%;
+}
+
+#image-container > div {
+  padding: 5px;
+  max-width: 100%;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer;
+  transition: all ease-in-out 0.5s;
+}
+
+img:hover {
+  border: 2px solid rgb(4, 7, 24);
+  transform: scale(1.05);
+  filter: sepia(70%) brightness(0.7);
+}
+
+/* styles for different screens */
+@media (min-width: 768px) {
+  #image-container > div {
+    padding: 10px;
+    max-width: 50%;
+  }
+}
+
+@media (min-width: 1200px) {
+  #image-container > div {
+    padding: 10px;
+    max-width: 33%;
+  }
+  #image-container {
+    padding: 0;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
