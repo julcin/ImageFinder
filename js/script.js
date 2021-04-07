@@ -1,17 +1,18 @@
 "use strict";
 
-//read more at https://unsplash.com/documentation
-
 const form = document.querySelector("#search-form");
 
 form.addEventListener("submit", e => {
   e.preventDefault();
+  //searchbox value
   const keyword = e.target[0].value;
+  const number = e.target[1].value;
 
   //sending request to api with keyword from searchbox as parameter
   //and setting header with authorization key
+  //read more about API at https://unsplash.com/documentation
   fetch(
-    `https://api.unsplash.com/search/photos/?query=${keyword}&per_page=12`,
+    `https://api.unsplash.com/search/photos/?query=${keyword}&per_page=${number}`,
     {
       headers: {
         Authorization: "Client-ID _nljZlZE2dNQlnThC-THfGmtcgkjEOiL0u5j2ke6ERA",
@@ -44,6 +45,7 @@ function displayResult(keyword) {
   if (resultContainer.firstChild) {
     resultContainer.firstChild.remove();
   }
+  //creating search result text
   const title = document.createElement("h2");
   title.appendChild(document.createTextNode(`Images found for "${keyword}":`));
   resultContainer.appendChild(title);

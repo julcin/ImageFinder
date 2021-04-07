@@ -29,7 +29,8 @@ h2 {
 
 /* search button and input style */
 input,
-button {
+button,
+select {
   height: 30px;
 }
 
